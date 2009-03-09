@@ -1,15 +1,20 @@
 import socket
 from select import select
 def serv(port,host='0.0.0.0', timeout=0):
+    addr = None
+
     s = socket.socket()
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind((host,port))
     s.listen(0)
-    ret = select([s],[],[], timeout)
-    addr = None
-    if ret[0]:
+    if timeout:
+        ret = select([s],[],[], timeout)[0]
+
+    #if there is no timeout, or there is a timeout and select
+    #returned something, accept
+    if not timeout or ret:
         _, addr = s.accept()
-        s.shutdown(socket.SHUT_RDWR)
+    s.shutdown(socket.SHUT_RDWR)
     s.close()
     return addr
 

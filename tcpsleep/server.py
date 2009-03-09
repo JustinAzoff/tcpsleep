@@ -6,11 +6,12 @@ def serv(port,host='0.0.0.0', timeout=0):
     s.bind((host,port))
     s.listen(0)
     ret = select([s],[],[], timeout)
+    addr = None
     if ret[0]:
-        s.accept()
+        _, addr = s.accept()
         s.shutdown(socket.SHUT_RDWR)
     s.close()
-    return bool(ret[0])
+    return addr
 
 def main():
     import sys
@@ -34,6 +35,7 @@ def main():
 
     ret = serv(options.port, options.addr, timeout)
     if ret:
+        print ret[0], ret[1]
         sys.exit(0)
     else:
         sys.exit(1)

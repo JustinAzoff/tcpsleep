@@ -1,5 +1,4 @@
-from setuptools import setup
-from glob import glob
+from setuptools import setup, find_packages
 
 setup(name="tcpsleep",
     version="1.0",
@@ -11,4 +10,5 @@ setup(name="tcpsleep",
             'tcpsleep   = tcpsleep.server:main',
         ]
     },
+    test_suite='nose.collector',
 )

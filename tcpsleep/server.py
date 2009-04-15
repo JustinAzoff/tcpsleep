@@ -1,6 +1,12 @@
 import socket
 from select import select
 def serv(port,host='0.0.0.0', timeout=0):
+    """Bind to a port and wait for a connection or a timeout
+
+    :param port: The port to bind to
+    :param host: The address to listen on
+    :param timeout: maximum time to wait
+    """
     addr = None
 
     s = socket.socket()

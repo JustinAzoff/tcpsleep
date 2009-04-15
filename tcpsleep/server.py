@@ -40,7 +40,7 @@ def main():
 
     ret = serv(options.port, options.addr, timeout)
     if ret:
-        print ret[0], ret[1]
+        sys.stderr.write("%s %s\n" % ( ret[0], ret[1] ))
         sys.exit(1)
     else:
         sys.exit(0)

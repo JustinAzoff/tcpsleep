@@ -1,0 +1,4 @@
+*.pyc
+build
+dist
+tcpsleep.egg-info

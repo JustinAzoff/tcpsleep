@@ -20,15 +20,15 @@ Example
 
 Lets have tcpsleep sleep for 5 seconds while listening on port 1234::
 
-    $ tcpsleep 5 -p 1234 || echo 'woken up'
+    $ tcpsleep 5 -p 1234 && echo 'woken up'
     $
 
-If nothing connects to port 1234, tcpsleep will exit with an exit code of 0.
-You can read that command line as "sleep for 5 seconds otherwise echo woken up"
+If nothing connects to port 1234, tcpsleep will exit with an exit code of 1.
+You can read that command line as "sleep for 5 seconds and if woken up echo somethin"
 
 If we re-run that same command, but this time use telnet to connect to port 1234::
 
-    $ tcpsleep 5 -p 1234 || echo 'woken up'
+    $ tcpsleep 5 -p 1234 && echo 'woken up'
     127.0.0.1 41668
     woken up
     $

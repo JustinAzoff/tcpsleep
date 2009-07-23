@@ -1,0 +1,5 @@
+tcpsleep (1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Justin Azoff <justin@bouncybouncy.net>  Wed, 22 Jul 2009 20:49:08 -0400

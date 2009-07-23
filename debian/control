@@ -1,0 +1,13 @@
+Source: tcpsleep
+Section: python
+Priority: optional
+Maintainer: Justin Azoff <justin@bouncybouncy.net>
+Standards-Version: 3.6.1.1
+Build-Depends: cdbs, python2.6-dev, python-setuptools
+
+Package: tcpsleep
+Architecture: any
+Depends: ${python:Depends}
+Description: like sleep, but listen on a tcp port
+ tcpsleep is a python module and program for sleeping while listening on
+ a tcp port for a wakeup signal

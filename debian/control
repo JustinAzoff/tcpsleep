@@ -9,5 +9,5 @@ Package: tcpsleep
 Architecture: any
 Depends: ${python:Depends}
 Description: like sleep, but listen on a tcp port
- tcpsleep is a python module and program for sleeping while listening on
+ tcpsleep is a Python module and program for sleeping while listening on
  a tcp port for a wakeup signal

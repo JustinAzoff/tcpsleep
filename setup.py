@@ -10,5 +10,9 @@ setup(name="tcpsleep",
             'tcpsleep   = tcpsleep.server:main',
         ]
     },
+    setup_requires=[
+        "nose",
+        "sphinx",
+    ],
     test_suite='nose.collector',
 )
